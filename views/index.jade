@@ -1,0 +1,19 @@
+html(ng-app='app')
+    head
+        link(rel='stylesheet', href='bootstrap/dist/css/bootstrap.css')
+        script(type='text/javascript', src='angular/angular.js')
+        script(type='text/javascript', src='js/angularscript.js')
+        script(type='text/javascript', src='angular-resource/angular-resource.js')
+    
+    
+    body(ng-controller='MainController as mainCtrl')  
+    
+    .col-md-6.col-md-offset-3
+        h1 {{mainCtrl.message}}
+        .well
+            .well(ng-repeat='userData in mainCtrl.usersData')
+                h4 {{userData.user}}
+                h5 {{userData.position}}
+                p  {{userData.department}}
+                br
+            
